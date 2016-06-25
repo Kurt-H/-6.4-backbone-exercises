@@ -3,7 +3,7 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var formTemplate = require('../../templates/index.hbs');
 
-var FormView = Backbone.View.extend({
+var ProfileFormView = Backbone.View.extend({
   tagName: 'form',
   template: formTemplate,
   events: {
@@ -19,17 +19,25 @@ var FormView = Backbone.View.extend({
     this.collection.create({
       firstName: $('#firstname').val(),
       lastName: $('#lastName').val(),
-      email: $('email').val(),
-      streetAddress: $('streetAddress').val(),
-      cityAddress: $('cityAddress').val(),
-      phone: $('phone').val()
+      email: $('#email').val(),
+      streetAddress: $('#streetAddress').val(),
+      cityAddress: $('#cityAddress').val(),
+      zipcode: $('#zipcode').val(),
+      phone: $('#phone').val()
     });
+
     $('#firstname').val('');
     $('#lastName').val('');
-    $('email').val('');
-    $('streetAddress').val('');
-    $('cityAddress').val('');
-    $('phone').val('');
+    $('#email').val('');
+    $('#streetAddress').val('');
+    $('#cityAddress').val('');
+    $('#zipcode').val('');
+    $('#phone').val('');
+
 
   }
 });
+
+module.exports = {
+  'ProfileFormView': ProfileFormView
+};
