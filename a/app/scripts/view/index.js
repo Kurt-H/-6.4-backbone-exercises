@@ -2,28 +2,28 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var formTemplate = require('../../templates/index.hbs');
 
-var BlogFormView = Backbone.View.extend({
+var PostFormView = Backbone.View.extend({
   tagName: 'form',
   template: formTemplate,
   events: {
-    submit: 'addBlog'
+    submit: 'addPost'
   },
   render: function(){
     var renderedHtml = this.template();
     this.$el.html(renderedHtml);
     return this;
   },
-  addBlog: function(event){
+  addPost: function(event){
     event.preventDefault();
     this.collection.create({
       title: $('#title').val(),
-      blog: $('#blogEntry').val()
+      blog: $('#postEntry').val()
     });
     $('#title').val('');
-    $('#blogEntry').val('');
+    $('#postEntry').val('');
   }
 });
 
 module.exports = {
-  'BlogFormView': BlogFormView
+  'PostFormView': PostFormView
 };

@@ -1,11 +1,11 @@
 //console.log('Hello World!');
 var $ = require('jquery');
-var BlogCollection = require('./models/post.js').BlogCollection;
-var BlogFormView = require('./view/index.js').BlogFormView;
+var PostCollection = require('./models/post.js').PostCollection;
+var PostFormView = require('./view/index.js').PostFormView;
 
-var blogs = new BlogCollection();
+var posts = new PostCollection();
 
 //blogs.add([{key1: 'test'}]);
 
-var blogForm = new BlogFormView({collection: blogs});
-$('.app').append(blogForm.render().el);
+var postForm = new PostFormView({collection: posts});
+$('.app').append(postForm.render().el);

@@ -1,20 +1,20 @@
 var Backbone = require('backbone');
 
 
-var BlogModel = Backbone.Model.extend({
+var PostModel = Backbone.Model.extend({
   initialize: function(){
     console.log('initialized');
   }
 });
 
-var BlogCollection = Backbone.Collection.extend({
-  model: BlogModel,
+var PostCollection = Backbone.Collection.extend({
+  model: PostModel,
   url: 'http://tiny-lasagna-server.herokuapp.com/collections/ksposts/'
 });
 
 
 
 module.exports = {
-  'BlogModel': BlogModel,
-  'BlogCollection': BlogCollection
+  'PostModel': PostModel,
+  'PostCollection': PostCollection
 };
