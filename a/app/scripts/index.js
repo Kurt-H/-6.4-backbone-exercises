@@ -1,4 +1,4 @@
-console.log('Hello World!');
+//console.log('Hello World!');
 var $ = require('jquery');
 var BlogCollection = require('./models/post.js').BlogCollection;
 var BlogFormView = require('./view/index.js').BlogFormView;
